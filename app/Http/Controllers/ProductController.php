@@ -84,6 +84,13 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', 'Product deleted successfully.');
     }
 
+    public function archive(Product $product)
+    {
+        $product->update(['nullable' => $product['nullable']]);
+
+        return redirect()->route('products.show')->with('success', 'This product is archived');
+    }
+
     /**
      * Update the product status.
      */

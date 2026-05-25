@@ -30,6 +30,8 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-delete" onclick="return confirm('Delete this product?')">Delete</button>
                     </form>
+
+                    <a href="{{ route('products.archive', $product->id) }}" class="btn btn-view">Archive</a>
                 </td>
             </tr>
             @endforeach
